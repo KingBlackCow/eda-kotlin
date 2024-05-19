@@ -1,6 +1,11 @@
 rootProject.name = "event-driven-kotlin"
 
-include("api")
+include(
+    "api",
+    "domain",
+    "common",
+    "db"
+)
 
 pluginManagement {
     val kotlinVersion: String by settings
