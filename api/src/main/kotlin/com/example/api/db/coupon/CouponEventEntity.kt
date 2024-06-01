@@ -13,7 +13,7 @@ class CouponEventEntity(
     val id: Long? = null,
     val displayName: String? = null,
     val expiresAt: LocalDateTime? = null,
-    val issueLimit: Long? = null
+    val issueLimit: Long
 ) {
 
 
