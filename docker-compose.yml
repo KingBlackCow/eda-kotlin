@@ -10,5 +10,4 @@ services:
       - MYSQL_DATABASE=eda_kotlin
       - MYSQL_USER=sgs1159
       - MYSQL_PASSWORD=password
-    volumes:
-      - ./.data/mysql:/var/lib/mysql
+

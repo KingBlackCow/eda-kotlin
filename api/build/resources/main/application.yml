@@ -9,3 +9,6 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
