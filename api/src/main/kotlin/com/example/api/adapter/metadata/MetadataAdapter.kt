@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 class MetadataAdapter(
     private val metadataClient: MetadataClient
 ) {
-    fun getCategoryNameByCategoryId(categoryId: Long?): String {
+    fun getCategoryNameByCategoryId(categoryId: Long?): String? {
         val categoryResponse = metadataClient.getCategoryById(categoryId!!)
         return categoryResponse.name
     }

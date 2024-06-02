@@ -2,7 +2,7 @@ package com.example.api.controller
 
 import com.example.api.domain.inspectedPost.InspectedPost
 import com.example.api.domain.post.Post
-import com.example.api.service.PostInspectService
+import com.example.api.domain.post.PostInspectService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
