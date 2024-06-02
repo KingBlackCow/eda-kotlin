@@ -12,3 +12,7 @@ spring:
     hibernate:
       ddl-auto: create-drop
     defer-datasource-initialization: true
+
+external-server:
+  metadata:
+    url: http://localhost:8088

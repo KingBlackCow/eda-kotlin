@@ -4,7 +4,9 @@ import com.example.api.adapter.CouponEventAdapter
 import com.example.api.adapter.CouponEventCacheAdapter
 import com.example.api.adapter.CouponIssueRequestHistoryAdapter
 import com.example.api.domain.coupon.CouponEvent
+import org.springframework.stereotype.Service
 
+@Service
 class CouponIssueHistoryService(
     private val couponIssueRequestHistoryAdapter: CouponIssueRequestHistoryAdapter,
     private val couponEventAdapter: CouponEventAdapter,

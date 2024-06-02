@@ -4,11 +4,13 @@ import com.example.api.domain.coupon.CouponEvent
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.stereotype.Component
 import java.time.Duration
 
 val KEY_PREFIX: String = "coupon_event.v1:"
 val EXPIRE_SECONDS: Long = 60 * 2L
 
+@Component
 class CouponEventCacheAdapter(
     private val objectMapper: ObjectMapper = ObjectMapper(),
     private val redisTemplate: RedisTemplate<String, String>
