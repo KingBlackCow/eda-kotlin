@@ -9,4 +9,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-redis:3.2.0")
     implementation("org.springframework.kafka:spring-kafka:3.1.0")
     implementation("org.springframework.boot:spring-boot-starter-webflux:3.2.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb:3.2.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch:3.2.0")
 }

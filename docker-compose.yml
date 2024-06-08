@@ -11,3 +11,14 @@ services:
       - MYSQL_USER=sgs1159
       - MYSQL_PASSWORD=password
 
+  elasticsearch:
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.10.2'
+    container_name: elasticsearch_eda_kotlin
+    environment:
+      - discovery.type=single-node
+      - TZ=Asia/Seoul
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ./.data/elasticsearch:/usr/share/elasticsearch/data

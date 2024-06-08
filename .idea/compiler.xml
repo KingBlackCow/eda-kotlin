@@ -7,10 +7,7 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.2.3/ddfb951196f104bf6c5d2f2b4bd86108ff81abcd/spring-boot-configuration-processor-3.2.3.jar" />
         </processorPath>
-        <module name="event-driven-kotlin.db.main" />
         <module name="event-driven-kotlin.api.main" />
-        <module name="event-driven-kotlin.common.main" />
-        <module name="event-driven-kotlin.domain.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

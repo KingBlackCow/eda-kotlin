@@ -12,6 +12,10 @@ spring:
     hibernate:
       ddl-auto: create-drop
     defer-datasource-initialization: true
+  data:
+    elasticsearch:
+      host: localhost
+      port: 9200
 
 external-server:
   metadata:
