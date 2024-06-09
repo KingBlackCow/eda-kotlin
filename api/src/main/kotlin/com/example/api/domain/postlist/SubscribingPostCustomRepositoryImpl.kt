@@ -17,7 +17,6 @@ interface SubscribingPostCustomRepository {
     fun deleteAllByPostId(postId: Long)
 }
 
-
 @Repository
 class SubscribingPostCustomRepositoryImpl(val mongoTemplate: MongoTemplate) : SubscribingPostCustomRepository {
 

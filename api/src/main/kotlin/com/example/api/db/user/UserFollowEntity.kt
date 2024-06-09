@@ -12,18 +12,18 @@ import java.time.LocalDateTime
 class UserFollowEntity(
     @JoinColumn(name = "follower_id")
     @ManyToOne
-    private val follower: UserEntity,
+    val follower: UserEntity,
 
     @JoinColumn(name = "following_id")
     @ManyToOne
-    private val following: UserEntity
+    val following: UserEntity
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long? = null
+    val id: Long? = null
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @CreatedDate
     @Column(nullable = false, updatable = false)
-    private var createdAt: LocalDateTime? = null
+    var createdAt: LocalDateTime? = null
 }

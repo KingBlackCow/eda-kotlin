@@ -22,7 +22,7 @@ class ResolvedPostCacheAdapter(
         } catch (e: JsonProcessingException) {
             throw RuntimeException(e)
         }
-        redisTemplate.opsForValue()[generateCacheKey(resolvedPost.id!!), jsonString] =
+        redisTemplate.opsForValue()[generateCacheKey(resolvedPost.id), jsonString] =
             Duration.ofSeconds(EXPIRE_SECONDS)
     }
 

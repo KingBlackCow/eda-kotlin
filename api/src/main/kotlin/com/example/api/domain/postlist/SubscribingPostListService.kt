@@ -2,6 +2,7 @@ package com.example.api.domain.postlist
 
 import com.example.api.domain.post.PostResolvingHelpService
 import com.example.api.domain.post.ResolvedPost
+import com.example.api.domain.subscribingpost.SubscribingPostAdapter
 import org.springframework.stereotype.Service
 
 private const val PAGE_SIZE = 5

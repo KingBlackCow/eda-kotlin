@@ -21,7 +21,7 @@ object PostEntityConverter {
             id = postEntity.id,
             title = postEntity.title,
             content = postEntity.content,
-            userId = postEntity.userId,
+            userId = postEntity.userId!!,
             categoryId = postEntity.categoryId,
             createdAt = postEntity.createdAt,
             updatedAt = postEntity.updatedAt,

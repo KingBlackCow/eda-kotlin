@@ -10,13 +10,13 @@ import java.time.LocalDateTime
 
 @Entity(name = "user")
 class UserEntity(
-    private val name: String,
-    private val email: String
+    val name: String,
+    val email: String
 ) : BaseEntity() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long? = null
+    val id: Long? = null
     private val deletedAt: LocalDateTime? = null
 
     companion object {

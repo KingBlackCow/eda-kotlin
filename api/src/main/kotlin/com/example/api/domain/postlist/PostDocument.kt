@@ -7,7 +7,6 @@ import org.springframework.data.elasticsearch.annotations.Field
 import org.springframework.data.elasticsearch.annotations.FieldType
 import java.time.LocalDateTime
 
-
 @Document(indexName = "post-1")
 data class PostDocument(
     @Id

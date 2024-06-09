@@ -15,10 +15,10 @@ abstract class BaseEntity {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @CreatedDate
     @Column(nullable = false, updatable = false)
-    protected var createdAt: LocalDateTime? = null
+    var createdAt: LocalDateTime? = null
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @LastModifiedDate
     @Column(nullable = false)
-    protected var updatedAt: LocalDateTime? = null
+    var updatedAt: LocalDateTime? = null
 }

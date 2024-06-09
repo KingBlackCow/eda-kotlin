@@ -21,12 +21,12 @@ class SubscribingPostDocument(
             followerUserId: Long
         ): SubscribingPostDocument {
             return SubscribingPostDocument(
-                generateDocumentId(post.id!!, followerUserId),
-                post.id,
-                followerUserId!!,
-                post.createdAt,
-                LocalDateTime.now(),
-                false
+                id = generateDocumentId(post.id!!, followerUserId),
+                postId = post.id,
+                followerUserId = followerUserId,
+                postCreatedAt = post.createdAt,
+                addedAt = LocalDateTime.now(),
+                read = false
             )
         }
         private fun generateDocumentId(postId: Long, followerUserId: Long): String {

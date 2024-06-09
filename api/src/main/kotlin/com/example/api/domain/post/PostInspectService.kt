@@ -12,7 +12,7 @@ class PostInspectService(
     private val postAutoInspectAdapter: PostAutoInspectAdapter
 ) {
     fun inspectAndGetIfValid(post: Post): InspectedPost? {
-        val categoryName: String = metadataAdapter.getCategoryNameByCategoryId(post.categoryId).toString()
+        val categoryName: String = metadataAdapter.getCategoryNameByCategoryId(post.categoryId!!).toString()
         val inspectionResult: AutoInspectionResult = postAutoInspectAdapter.inspect(post, categoryName)
         if (!inspectionResult.status.equals("GOOD")) return null
         return InspectedPost.generate(

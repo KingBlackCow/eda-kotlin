@@ -55,7 +55,7 @@ class PostResolvingHelpService(
         if (post == null) return null
         var resolvedPost: ResolvedPost? = null
         val userName = metadataAdapter.getUserNameByUserId(post.userId)
-        val categoryName = metadataAdapter.getCategoryNameByCategoryId(post.categoryId)
+        val categoryName = metadataAdapter.getCategoryNameByCategoryId(post.categoryId!!)
         if (userName != null && categoryName != null) {
             resolvedPost = ResolvedPost.generate(post, userName, categoryName)
             resolvedPostCacheAdapter.set(resolvedPost)

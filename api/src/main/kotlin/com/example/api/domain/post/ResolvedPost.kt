@@ -1,18 +1,19 @@
 package com.example.api.domain.post
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime
 
 data class ResolvedPost(
-    val id: Long,
-    val title: String? = null,
-    val content: String? = null,
-    val userId: Long? = null,
-    val userName: String? = null,
-    val categoryId: Long? = null,
-    val categoryName: String? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null,
-    val updated: Boolean
+    @JsonProperty("id") val id: Long,
+    @JsonProperty("title") val title: String? = null,
+    @JsonProperty("content") val content: String? = null,
+    @JsonProperty("userId") val userId: Long? = null,
+    @JsonProperty("userName") val userName: String? = null,
+    @JsonProperty("categoryId") val categoryId: Long? = null,
+    @JsonProperty("categoryName") val categoryName: String? = null,
+    @JsonProperty("createdAt") val createdAt: LocalDateTime? = null,
+    @JsonProperty("updatedAt") val updatedAt: LocalDateTime? = null,
+    @JsonProperty("updated") val updated: Boolean
 ) {
     companion object {
         fun generate(

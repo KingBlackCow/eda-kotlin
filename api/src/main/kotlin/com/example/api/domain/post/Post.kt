@@ -1,16 +1,17 @@
 package com.example.api.domain.post
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime
 
 class Post(
-    val id: Long? = null,
-    var title: String? = null,
-    var content: String? = null,
-    val userId: Long? = null,
-    var categoryId: Long? = null,
-    val createdAt: LocalDateTime? = null,
-    var updatedAt: LocalDateTime? = null,
-    var deletedAt: LocalDateTime? = null
+    @JsonProperty("id") val id: Long? = null,
+    @JsonProperty("title") var title: String? = null,
+    @JsonProperty("content") var content: String? = null,
+    @JsonProperty("userId") val userId: Long,
+    @JsonProperty("categoryId") var categoryId: Long? = null,
+    @JsonProperty("createdAt") val createdAt: LocalDateTime? = null,
+    @JsonProperty("updatedAt") var updatedAt: LocalDateTime? = null,
+    @JsonProperty("deletedAt") var deletedAt: LocalDateTime? = null
 ) {
 
 

@@ -1,5 +1,7 @@
 package com.example.api.adapter.chatgpt
 
+import com.example.api.common.Log
+import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
@@ -9,17 +11,17 @@ import org.springframework.web.reactive.function.client.WebClient
 import java.util.List
 import java.util.Map
 
+private const val TARGET_GPT_MODEL = "gpt-3.5-turbo"
 @Component
 class ChatGptClient(
     @param:Qualifier("chatGptWebClient") private val chatGptWebClient: WebClient,
     @Value("\${OPENAI_API_KEY}") private val openaiApiKey: String,
     private val objectMapper: ObjectMapper
 ) {
-    companion object {
-        private const val TARGET_GPT_MODEL = "gpt-3.5-turbo"
-    }
 
-    fun getResultForContentWithPolicy(content: String?, chatPolicy: ChatPolicy): String {
+    companion object: Log
+
+    fun getResultForContentWithPolicy(content: String, chatPolicy: ChatPolicy): String {
         val jsonString = chatGptWebClient
             .post()
             .uri("/v1/chat/completions")
@@ -43,7 +45,8 @@ class ChatGptClient(
         try {
             val response: ChatCompletionResponse =
                 objectMapper.readValue(jsonString, ChatCompletionResponse::class.java)
-            return response.choices.get(0).message.content
+            log.info("chatGPT: ${response}")
+            return response.choices[0].message.content
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
@@ -52,7 +55,7 @@ class ChatGptClient(
 }
 
 data class ChatPolicy(
-    internal val instruction: String? = null,
-    val exampleContent: String? = null,
-    val exampleInspectionResult: String? = null
+    @JsonProperty("instruction") internal val instruction: String? = null,
+    @JsonProperty("exampleContent") val exampleContent: String? = null,
+    @JsonProperty("exampleInspectionResult") val exampleInspectionResult: String? = null
 )

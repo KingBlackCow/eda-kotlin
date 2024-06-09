@@ -1,7 +1,6 @@
 package com.example.api.controller
 
 import com.example.api.service.CategoryService
-import com.example.api.db.config.ObjectMapperConfig
 import com.example.api.db.category.CategoryEntity
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,7 +13,7 @@ class CategoryController(
     private val categoryService: CategoryService,
 ) {
     @GetMapping("")
-    fun readPostDetail(): ResponseEntity<List<CategoryEntity>> {
+    fun getCategories(): ResponseEntity<List<CategoryEntity>> {
         val categoryEntities: List<CategoryEntity> = categoryService.getCategories()
         return ResponseEntity.ok().body(categoryEntities)
     }

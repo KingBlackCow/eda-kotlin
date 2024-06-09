@@ -1,6 +1,7 @@
 package com.example.api.adapter.chatgpt
 
 import com.example.api.domain.post.Post
+import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.stereotype.Component
 
@@ -52,6 +53,6 @@ class PostAutoInspectAdapter(
 }
 
 data class AutoInspectionResult(
-    val status: String, // "GOOD" or "BAD"
-    val tags: List<String>
+    @JsonProperty("status") val status: String, // "GOOD" or "BAD"
+    @JsonProperty("tags") val tags: List<String>
 )

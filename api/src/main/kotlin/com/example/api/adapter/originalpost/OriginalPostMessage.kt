@@ -1,22 +1,23 @@
 package com.example.api.adapter.originalpost
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalDateTime
 
 data class OriginalPostMessage (
-    val id: Long? = null,
-    val payload: Payload? = null,
-    val operationType: OperationType
+    @JsonProperty("id") val id: Long? = null,
+    @JsonProperty("payload") val payload: Payload? = null,
+    @JsonProperty("operationType") val operationType: OperationType
 )
 
 data class Payload (
-    val id: Long? = null,
-    val title: String? = null,
-    val content: String? = null,
-    val userId: Long? = null,
-    val categoryId: Long? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null,
-    val deletedAt: LocalDateTime? = null
+    @JsonProperty("id") val id: Long? = null,
+    @JsonProperty("title") val title: String? = null,
+    @JsonProperty("content") val content: String? = null,
+    @JsonProperty("userId") val userId: Long? = null,
+    @JsonProperty("categoryId") val categoryId: Long? = null,
+    @JsonProperty("createdAt") val createdAt: LocalDateTime? = null,
+    @JsonProperty("updatedAt") val updatedAt: LocalDateTime? = null,
+    @JsonProperty("deletedAt") val deletedAt: LocalDateTime? = null
 )
 
 enum class OperationType {
