@@ -1,1 +1,8 @@
 /local.env
+/.data/
+/.data/elasticsearch/
+/.data/kafka1/
+/.data/kafka2/
+/.data/kafka3/
+/.data/mongodb/
+/.data/zookeeper/
