@@ -51,6 +51,17 @@ class PostResolvingHelpService(
             .toList() as List<ResolvedPost>
     }
 
+    fun resolvePostAndSave(post: Post?) {
+        val resolvedPost = this.resolvePost(post)
+        if (resolvedPost != null) {
+            resolvedPostCacheAdapter.set(resolvedPost)
+        }
+    }
+
+    fun deleteResolvedPost(postId: Long?) {
+        resolvedPostCacheAdapter.delete(postId!!)
+    }
+
     private fun resolvePost(post: Post?): ResolvedPost? {
         if (post == null) return null
         var resolvedPost: ResolvedPost? = null
