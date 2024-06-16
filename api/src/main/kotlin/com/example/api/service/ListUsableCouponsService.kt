@@ -1,6 +1,6 @@
 package com.example.api.service
 
-import com.example.api.db.coupon.CouponAdapter
+import com.example.api.domain.coupon.CouponAdapter
 import com.example.api.domain.coupon.ResolvedCoupon
 import org.springframework.stereotype.Service
 

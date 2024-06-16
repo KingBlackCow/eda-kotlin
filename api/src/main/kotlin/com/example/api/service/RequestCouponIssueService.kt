@@ -1,6 +1,6 @@
 package com.example.api.service
 
-import com.example.api.adapter.couponissuerequest.CouponIssueRequestAdapter
+import com.example.api.domain.coupon.CouponIssueRequestAdapter
 import org.springframework.stereotype.Service
 
 @Service

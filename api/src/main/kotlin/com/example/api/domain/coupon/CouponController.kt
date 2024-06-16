@@ -1,15 +1,13 @@
-package com.example.api.controller
+package com.example.api.domain.coupon
 
 import com.example.api.controller.dto.CouponDto
 import com.example.api.controller.dto.CouponIssueRequest
-import com.example.api.domain.coupon.ResolvedCoupon
 import com.example.api.service.CouponIssueHistoryService
 import com.example.api.service.ListUsableCouponsService
 import com.example.api.service.RequestCouponIssueService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.function.Function
 
 @RestController
 @RequestMapping("/coupons")
@@ -34,11 +32,13 @@ class CouponController(
 
     @GetMapping
     fun listUsableCoupons(
-        @RequestParam(name = "userId", defaultValue = "0", required = false) userId: Long?
+        @RequestParam(name = "userId", defaultValue = "0", required = false) userId: Long
     ): ResponseEntity<List<CouponDto>> {
-        val resolvedCoupons: List<ResolvedCoupon> = listUsableCouponsService.listByUserId(userId!!)
+        val resolvedCoupons = listUsableCouponsService.listByUserId(userId)
         return ResponseEntity.ok()
-            .body(resolvedCoupons.stream().map { this.toDto(it) }.toList())
+            .body(resolvedCoupons.stream().map { resolvedCoupon: ResolvedCoupon ->
+                this.toDto(resolvedCoupon)
+            }.toList())
     }
 
     private fun toDto(resolvedCoupon: ResolvedCoupon): CouponDto {

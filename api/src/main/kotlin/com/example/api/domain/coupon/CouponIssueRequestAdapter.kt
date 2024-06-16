@@ -1,5 +1,6 @@
-package com.example.api.adapter.couponissuerequest
+package com.example.api.domain.coupon
 
+import com.example.api.adapter.couponissuerequest.CouponIssueRequestMessage
 import com.example.api.common.Topic.COUPON_ISSUE_REQUEST
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
