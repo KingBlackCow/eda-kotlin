@@ -26,6 +26,16 @@ services:
       - "9300:9300"
     volumes:
       - ./.data/elasticsearch:/usr/share/elasticsearch/data
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:7.10.2'
+    container_name: kibana_eda_kotlin
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
   zookeeper:
     image: 'bitnami/zookeeper:3.7.2'
     container_name: zookeeper_eda_kotlin
