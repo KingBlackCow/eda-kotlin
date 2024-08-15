@@ -14,7 +14,7 @@ class InspectedPostMessageProduceAdapter(
     private val objectMapper: ObjectMapper
 ) {
     fun sendCreateMessage(inspectedPost: InspectedPost) {
-        val message: InspectedPostMessage = InspectedPostMessage(
+        val message = InspectedPostMessage(
             inspectedPost.post.id!!,
             Payload(
                 inspectedPost.post,
@@ -28,7 +28,7 @@ class InspectedPostMessageProduceAdapter(
     }
 
     fun sendUpdateMessage(inspectedPost: InspectedPost) {
-        val message: InspectedPostMessage = InspectedPostMessage(
+        val message = InspectedPostMessage(
             inspectedPost.post.id!!,
             Payload(
                 inspectedPost.post,
@@ -42,7 +42,7 @@ class InspectedPostMessageProduceAdapter(
     }
 
     fun sendDeleteMessage(postId: Long) {
-        val message: InspectedPostMessage = InspectedPostMessage(
+        val message = InspectedPostMessage(
             postId,
             null,
             OperationType.DELETE

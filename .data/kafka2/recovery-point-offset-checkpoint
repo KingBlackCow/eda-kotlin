@@ -1,9 +1,10 @@
 0
-18
+19
 __consumer_offsets 22 0
+coupon.request 0 3
 __consumer_offsets 4 0
 __consumer_offsets 7 0
-post.inspected 0 13
+post.inspected 0 21
 __consumer_offsets 46 0
 __consumer_offsets 25 0
 __consumer_offsets 49 0
@@ -13,7 +14,7 @@ __consumer_offsets 31 0
 __consumer_offsets 37 0
 __consumer_offsets 19 0
 __consumer_offsets 13 0
-__consumer_offsets 43 106
+__consumer_offsets 43 140
 __consumer_offsets 1 0
 __consumer_offsets 34 0
 __consumer_offsets 10 0

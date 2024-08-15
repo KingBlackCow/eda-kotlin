@@ -11,10 +11,10 @@ class OriginalPostMessageConverter {
                 originalPostMessage.payload?.title,
                 originalPostMessage.payload?.content,
                 originalPostMessage.payload?.userId!!,
-                originalPostMessage.payload?.categoryId,
-                originalPostMessage.payload?.createdAt,
-                originalPostMessage.payload?.updatedAt,
-                originalPostMessage.payload?.deletedAt
+                originalPostMessage.payload.categoryId,
+                originalPostMessage.payload.createdAt,
+                originalPostMessage.payload.updatedAt,
+                originalPostMessage.payload.deletedAt
             )
         }
     }
